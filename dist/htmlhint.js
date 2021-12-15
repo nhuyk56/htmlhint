@@ -1200,7 +1200,7 @@
 	Object.defineProperty(titleRequire, "__esModule", { value: true });
 	titleRequire.default = {
 	    id: 'title-require',
-	    description: '<title> must be present in <head> tag.',
+	    description: '<title>1 must be present in <head> tag.',
 	    init(parser, reporter) {
 	        let headBegin = false;
 	        let hasTitle = false;
@@ -1224,7 +1224,7 @@
 	            }
 	            else if (tagName === 'head') {
 	                if (hasTitle === false) {
-	                    reporter.error('<title> must be present in <head> tag.', event.line, event.col, this, event.raw);
+	                    reporter.error('<title>2 must be present in <head> tag.', event.line, event.col, this, event.raw);
 	                }
 	                parser.removeListener('tagstart', onTagStart);
 	                parser.removeListener('tagend', onTagEnd);

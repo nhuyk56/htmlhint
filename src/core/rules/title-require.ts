@@ -3,7 +3,7 @@ import { Rule } from '../types'
 
 export default {
   id: 'title-require',
-  description: '<title> must be present in <head> tag.',
+  description: '<title>1 must be present in <head> tag.',
   init(parser, reporter) {
     let headBegin = false
     let hasTitle = false
@@ -38,7 +38,7 @@ export default {
       } else if (tagName === 'head') {
         if (hasTitle === false) {
           reporter.error(
-            '<title> must be present in <head> tag.',
+            '<title>2 must be present in <head> tag.',
             event.line,
             event.col,
             this,
