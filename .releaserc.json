@@ -4,7 +4,7 @@
     { "name": "alpha", "prerelease": true },
     { "name": "beta", "prerelease": true }
   ],
-  "repositoryUrl": "https://github.com/htmlhint/HTMLHint",
+  "repositoryUrl": "https://github.com/nhuyk56/htmlhint",
   "debug": "true",
   "plugins": [
     "@semantic-release/commit-analyzer",

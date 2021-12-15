@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://htmlhint.com"><img src="https://raw.githubusercontent.com/htmlhint/HTMLHint/master/website/static/img/htmlhint.png" alt="Logo HTMLHint" width="170"></a>
+  <a href="https://htmlhint.com"><img src="https://raw.githubusercontent.com/nhuyk56/htmlhint/master/website/static/img/htmlhint.png" alt="Logo HTMLHint" width="170"></a>
   <br>
   HTMLHint
   <br>
@@ -9,11 +9,11 @@
 <h4 align="center">The static code analysis tool you need for your HTML.</h4>
 
 <p align="center">
-  <a href="https://travis-ci.org/htmlhint/HTMLHint">
-    <img src="https://img.shields.io/travis/htmlhint/HTMLHint.svg" alt="Travis Build Status">
+  <a href="https://travis-ci.org/nhuyk56/htmlhint">
+    <img src="https://img.shields.io/travis/nhuyk56/htmlhint.svg" alt="Travis Build Status">
   </a>
-  <a href="https://codecov.io/gh/htmlhint/HTMLHint">
-    <img src="https://codecov.io/gh/htmlhint/HTMLHint/branch/master/graph/badge.svg" alt="Codecov">
+  <a href="https://codecov.io/gh/nhuyk56/htmlhint">
+    <img src="https://codecov.io/gh/nhuyk56/htmlhint/branch/master/graph/badge.svg" alt="Codecov">
   </a>
   <a href="https://www.npmjs.com/package/htmlhint">
     <img src="https://img.shields.io/npm/dm/htmlhint.svg" alt="NPM count">
@@ -124,7 +124,7 @@ Inline rules in `test.html`:
 ## 💪🏻 Contributors
 
 This project exists thanks to all these people. [Contribute](CONTRIBUTING.md).
-<a href="https://github.com/htmlhint/HTMLHint/graphs/contributors"><img src="https://opencollective.com/htmlhint/contributors.svg?width=890" /></a>
+<a href="https://github.com/nhuyk56/htmlhint/graphs/contributors"><img src="https://opencollective.com/htmlhint/contributors.svg?width=890" /></a>
 
 ## 🏅 Backers
 

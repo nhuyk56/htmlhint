@@ -10,11 +10,11 @@
   ],
   "homepage": "https://htmlhint.com",
   "bugs": {
-    "url": "https://github.com/htmlhint/HTMLHint/issues"
+    "url": "https://github.com/nhuyk56/htmlhint/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/htmlhint/HTMLHint.git"
+    "url": "git+https://github.com/nhuyk56/htmlhint.git"
   },
   "license": "MIT",
   "main": "dist/htmlhint.js",

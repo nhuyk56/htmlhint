@@ -5,7 +5,7 @@ const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 const PACKAGE = require('../package.json')
-const GITHUB_URL = 'https://github.com/htmlhint/HTMLHint'
+const GITHUB_URL = 'https://github.com/nhuyk56/htmlhint'
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -60,7 +60,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/HTMLHint/HTMLHint',
+            href: 'https://github.com/nhuyk56/htmlhint',
             label: 'GitHub',
             position: 'left',
           },
