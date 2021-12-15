@@ -1235,6 +1235,46 @@
 	    },
 	};
 
+	var titleRequire2 = {};
+
+	Object.defineProperty(titleRequire2, "__esModule", { value: true });
+	titleRequire2.default = {
+	    id: 'title-require2',
+	    description: '<title>1 must be present in <head> tag.',
+	    init(parser, reporter) {
+	        let headBegin = false;
+	        let hasTitle = false;
+	        const onTagStart = (event) => {
+	            const tagName = event.tagName.toLowerCase();
+	            if (tagName === 'head') {
+	                headBegin = true;
+	            }
+	            else if (tagName === 'title' && headBegin) {
+	                hasTitle = true;
+	            }
+	        };
+	        const onTagEnd = (event) => {
+	            const tagName = event.tagName.toLowerCase();
+	            if (hasTitle && tagName === 'title') {
+	                const lastEvent = event.lastEvent;
+	                if (lastEvent.type !== 'text' ||
+	                    (lastEvent.type === 'text' && /^\s*$/.test(lastEvent.raw) === true)) {
+	                    reporter.error('<title></title> must not be empty.', event.line, event.col, this, event.raw);
+	                }
+	            }
+	            else if (tagName === 'head') {
+	                if (hasTitle === false) {
+	                    reporter.error('<title>2 must be present in <head> tag.', event.line, event.col, this, event.raw);
+	                }
+	                parser.removeListener('tagstart', onTagStart);
+	                parser.removeListener('tagend', onTagEnd);
+	            }
+	        };
+	        parser.addListener('tagstart', onTagStart);
+	        parser.addListener('tagend', onTagEnd);
+	    },
+	};
+
 	var tagsCheck = {};
 
 	Object.defineProperty(tagsCheck, "__esModule", { value: true });
@@ -1363,7 +1403,7 @@
 
 	(function (exports) {
 	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.attrNoUnnecessaryWhitespace = exports.tagsCheck = exports.titleRequire = exports.tagnameSpecialChars = exports.tagnameLowercase = exports.emptyTagNotSelfClosed = exports.tagSelfClose = exports.tagPair = exports.styleDisabled = exports.srcNotEmpty = exports.specCharEscape = exports.spaceTabMixedDisabled = exports.scriptDisabled = exports.inputRequiresLabel = exports.inlineStyleDisabled = exports.inlineScriptDisabled = exports.idUnique = exports.idClassValue = exports.idClsasAdDisabled = exports.htmlLangRequire = exports.hrefAbsOrRel = exports.headScriptDisabled = exports.doctypeHTML5 = exports.doctypeFirst = exports.attrWhitespace = exports.attrValueSingleQuotes = exports.attrValueNotEmpty = exports.attrValueDoubleQuotes = exports.attrUnsafeChars = exports.attrNoDuplication = exports.attrSort = exports.attrLowercase = exports.altRequire = void 0;
+	exports.attrNoUnnecessaryWhitespace = exports.tagsCheck = exports.titleRequire2 = exports.titleRequire = exports.tagnameSpecialChars = exports.tagnameLowercase = exports.emptyTagNotSelfClosed = exports.tagSelfClose = exports.tagPair = exports.styleDisabled = exports.srcNotEmpty = exports.specCharEscape = exports.spaceTabMixedDisabled = exports.scriptDisabled = exports.inputRequiresLabel = exports.inlineStyleDisabled = exports.inlineScriptDisabled = exports.idUnique = exports.idClassValue = exports.idClsasAdDisabled = exports.htmlLangRequire = exports.hrefAbsOrRel = exports.headScriptDisabled = exports.doctypeHTML5 = exports.doctypeFirst = exports.attrWhitespace = exports.attrValueSingleQuotes = exports.attrValueNotEmpty = exports.attrValueDoubleQuotes = exports.attrUnsafeChars = exports.attrNoDuplication = exports.attrSort = exports.attrLowercase = exports.altRequire = void 0;
 	var alt_require_1 = altRequire;
 	Object.defineProperty(exports, "altRequire", { enumerable: true, get: function () { return alt_require_1.default; } });
 	var attr_lowercase_1 = attrLowercase;
@@ -1426,6 +1466,8 @@
 	Object.defineProperty(exports, "tagnameSpecialChars", { enumerable: true, get: function () { return tagname_specialchars_1.default; } });
 	var title_require_1 = titleRequire;
 	Object.defineProperty(exports, "titleRequire", { enumerable: true, get: function () { return title_require_1.default; } });
+	var title_require2_1 = titleRequire2;
+	Object.defineProperty(exports, "titleRequire2", { enumerable: true, get: function () { return title_require2_1.default; } });
 	var tags_check_1 = tagsCheck;
 	Object.defineProperty(exports, "tagsCheck", { enumerable: true, get: function () { return tags_check_1.default; } });
 	var attr_no_unnecessary_whitespace_1 = attrNoUnnecessaryWhitespace;
