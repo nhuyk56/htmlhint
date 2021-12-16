@@ -2,24 +2,24 @@ import { Block, Listener } from '../htmlparser'
 import { Rule } from '../types'
 
 export default {
-  id: 'title-require2',
-  description: '<title>1 must be present in <head> tag.',
+  id: 'custom-tag-require',
+  description: '<custom> must be present (ynn).',
   init(parser, reporter) {
-    let headBegin = false
-    let hasTitle = false
+    let bodyBegin = false
+    let hasCustom = false
 
     const onTagStart: Listener = (event) => {
       const tagName = event.tagName.toLowerCase()
-      if (tagName === 'head') {
-        headBegin = true
-      } else if (tagName === 'title' && headBegin) {
-        hasTitle = true
+      if (tagName === 'body') {
+        bodyBegin = true
+      } else if (tagName === 'custom' && bodyBegin) {
+        hasCustom = true
       }
     }
 
     const onTagEnd: Listener = (event) => {
       const tagName = event.tagName.toLowerCase()
-      if (hasTitle && tagName === 'title') {
+      if (hasCustom && tagName === 'custom') {
         // TODO: fix this error
         // @ts-expect-error
         const lastEvent: Block = event.lastEvent
@@ -28,17 +28,17 @@ export default {
           (lastEvent.type === 'text' && /^\s*$/.test(lastEvent.raw) === true)
         ) {
           reporter.error(
-            '<title></title> must not be empty.',
+            '<custom></custom> must not be empty (ynn).',
             event.line,
             event.col,
             this,
             event.raw
           )
         }
-      } else if (tagName === 'head') {
-        if (hasTitle === false) {
+      } else if (tagName === 'body') {
+        if (hasCustom === false) {
           reporter.error(
-            '<title>2 must be present in <head> tag.',
+            '<custom> must be present (ynn).',
             event.line,
             event.col,
             this,

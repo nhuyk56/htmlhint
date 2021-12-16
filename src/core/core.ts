@@ -21,6 +21,7 @@ class HTMLHintCore {
     'src-not-empty': true,
     'attr-no-duplication': true,
     'title-require': true,
+    'custom-tag-require': true,
   }
 
   public addRule(rule: Rule) {

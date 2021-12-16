@@ -55,7 +55,7 @@ export interface Ruleset {
   'tagname-specialchars'?: boolean
   'tags-check'?: { [tagName: string]: Record<string, unknown> }
   'title-require'?: boolean
-  'title-require2'?: boolean
+  'custom-tag-require'?: boolean
   // There may be other unknown rules
   [ruleId: string]: unknown
 }
