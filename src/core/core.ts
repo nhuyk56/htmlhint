@@ -11,16 +11,29 @@ export interface FormatOptions {
 class HTMLHintCore {
   public rules: { [id: string]: Rule } = {}
   public readonly defaultRuleset: Ruleset = {
-    'tagname-lowercase': true,
+    'alt-require': true,
     'attr-lowercase': true,
-    'attr-value-double-quotes': true,
-    'doctype-first': true,
-    'tag-pair': true,
-    'spec-char-escape': true,
-    'id-unique': true,
-    'src-not-empty': true,
     'attr-no-duplication': true,
+    'attr-no-unnecessary-whitespace': true,
+    'attr-unsafe-chars': true,
+    'attr-value-double-quotes': true,
+    'attr-value-not-empty': true,
+    'attr-whitespace': true,
+    'doctype-first': true,
+    'doctype-html5': true,
+    'empty-tag-not-self-closed': true,
+    'head-script-disabled': true,
+    'id-class-ad-disabled': true,
+    'id-unique': true,
+    'input-requires-label': true,
+    'script-disabled': true,
+    'spec-char-escape': true,
+    'src-not-empty': true,
+    'tag-pair': true,
+    'tagname-lowercase': true,
+    'tagname-specialchars': true,
     'title-require': true,
+    'email-date-format': true,
   }
 
   public addRule(rule: Rule) {

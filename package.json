@@ -27,6 +27,7 @@
     "dist"
   ],
   "scripts": {
+    "buildAndTest": "npm run build && node c:\\Users\\YNN\\Desktop\\htmlhint\\bin\\htmlhint C:\\Users\\YNN\\Desktop\\testing-emails\\Honda_Email_11-29_update\\honda.html",
     "build": "npm run clean && tsc && npm run build:rollup",
     "build:min": "rollup -c --environment NODE_ENV:production --file dist/htmlhint.min.js",
     "build:rollup": "npm run build:min && npm run build:unmin",
