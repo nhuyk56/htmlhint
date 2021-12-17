@@ -1384,6 +1384,7 @@
 	            });
 	            return res;
 	        };
+	        const isBefore = (tag) => !tagStack.includes(`${tag}:start`) && !tagStack.includes(`${tag}:end`);
 	        const isMiddle = (tag) => tagStack.includes(`${tag}:start`) && !tagStack.includes(`${tag}:end`);
 	        const isAfter = (tag) => tagStack.includes(`${tag}:start`) && tagStack.includes(`${tag}:end`);
 	        const onAllListener = (event) => {
@@ -1399,6 +1400,10 @@
 	                getDateRequired(event.raw).forEach((dateStr) => {
 	                    dateArr.push(dateStr);
 	                });
+	            }
+	            if (isAfter('html') && isBefore('body')) {
+	                reporter.error('<body> must be present in <html> tag.', event.line, event.col, this, event.raw);
+	                parser.removeListener('all', onAllListener);
 	            }
 	            if (isMiddle('html') && isAfter('body') && dateArr.length === 0) {
 	                reporter.error(`<body> tag missing ${dateRequired.join(' or ')}`, event.line, event.col, this, event.raw);

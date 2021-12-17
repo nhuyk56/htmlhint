@@ -48,6 +48,16 @@ export default {
         })
       }
 
+      if (isAfter('html') && isBefore('body')) {
+        reporter.error(
+          '<body> must be present in <html> tag.',
+          event.line,
+          event.col,
+          this,
+          event.raw
+        )
+        parser.removeListener('all', onAllListener)
+      }
       if (isMiddle('html') && isAfter('body') && dateArr.length === 0) {
         reporter.error(
           `<body> tag missing ${dateRequired.join(' or ')}`,
