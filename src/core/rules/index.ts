@@ -31,6 +31,3 @@ export { default as tagnameSpecialChars } from './tagname-specialchars'
 export { default as titleRequire } from './title-require'
 export { default as tagsCheck } from './tags-check'
 export { default as attrNoUnnecessaryWhitespace } from './attr-no-unnecessary-whitespace'
-
-/** my try */
-export { default as customTagRequire } from './custom-tag-require'
